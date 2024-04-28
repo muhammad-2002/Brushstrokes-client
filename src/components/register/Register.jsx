@@ -23,8 +23,9 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const { createEmailAndPassword, UpdateUser, setUser } =
+  const { createEmailAndPassword, UpdateUser, setUser, user } =
     useContext(AuthContext);
+
   const [passError, serPassError] = useState(null);
   const [Toggle, setToggle] = useState(true);
   const handleSubmitRegister = (data) => {

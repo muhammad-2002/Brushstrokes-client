@@ -67,8 +67,10 @@ const Provider = ({ children }) => {
       (user) => {
         if (user) {
           setUser(user);
+          setLoading(false);
         } else {
           setUser(null);
+          setLoading(false);
         }
       },
       () => unsubscribe()

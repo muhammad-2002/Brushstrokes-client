@@ -10,6 +10,7 @@ import { AuthContext } from "../../Provider/Provider";
 
 const Navbar = () => {
   const { user, logOutUser } = useContext(AuthContext);
+
   const [sideOpen, setSideOpen] = useState(true);
   const [userOpen, setUserOpen] = useState(false);
   const navigate = useNavigate();
@@ -32,7 +33,9 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     logOutUser()
-      .then((result) => console.log("sucessfull"))
+      .then((result) => {
+        navigate("/");
+      })
       .catch((err) => toast.error(err));
     setUserOpen(false);
   };
@@ -86,20 +89,22 @@ const Navbar = () => {
                 </NavLink>
               </li>
             )}
-            <li>
-              <NavLink
-                to="/myCart"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "text-[#0DBC95] border-b-4 border-[#0DBC95]"
-                    : "hover:text-[#0DBC95]"
-                }
-              >
-                <span>My Cart</span>
-              </NavLink>
-            </li>
+            {user && (
+              <li>
+                <NavLink
+                  to={`/my-art&craft/${user.email}`}
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-[#0DBC95] border-b-4 border-[#0DBC95]"
+                      : "hover:text-[#0DBC95]"
+                  }
+                >
+                  <span>MyArt&Craft</span>
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink
                 to="/all_craft_item"
@@ -252,7 +257,7 @@ const Navbar = () => {
             <li>
               <NavLink
                 onClick={() => setSideOpen()}
-                to="/myCart"
+                to="/my-art&craft"
                 className={({ isActive, isPending }) =>
                   isPending
                     ? "pending"
@@ -261,7 +266,7 @@ const Navbar = () => {
                     : "hover:text-[#0DBC95]"
                 }
               >
-                <span>My Cart</span>
+                <span>My-art&craft</span>
               </NavLink>
             </li>
             <li>

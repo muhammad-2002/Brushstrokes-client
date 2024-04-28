@@ -1,19 +1,10 @@
 import React from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const ArtCraftDetails = () => {
-  const paramsData = useParams();
-  //   useEffect(() => {
-  //     // Fetch data from the database using Axios
-  //     axios
-  //       .get(`http://localhost:5000/items/${paramsData}`)
-  //       .then((response) => setItems(response.data))
-  //       .catch((error) => console.error("Error fetching data:", error));
-  //   }, []);
   const loaderData = useLoaderData();
 
-  console.log(loaderData);
   const {
     name,
     email,

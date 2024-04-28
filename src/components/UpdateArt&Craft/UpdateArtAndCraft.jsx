@@ -1,30 +1,29 @@
 import axios from "axios";
 import { useContext } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/Provider";
 
-const AddCraft = () => {
+const UpdateArtAndCraft = ({}) => {
+  const param = useParams();
+  console.log(param);
   const { user } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    const name = user.displayName;
     const ItemName = form.ItemName.value;
     const processing_time = form.processing_time.value;
     const subcategoryName = form.subcategoryName.value;
     const description = form.description.value;
     const price = form.price.value;
-    // const details = form.details.value;
     const stock = form.stock.value;
     const customization = form.customization.value;
     const image = form.image.value;
     const rating = form.rating.value;
-    const email = user.email;
+
     const Craft = {
-      name,
       ItemName,
       subcategoryName,
       description,
@@ -34,19 +33,22 @@ const AddCraft = () => {
       image,
       rating,
       processing_time,
-      email,
     };
 
-    axios.post("http://localhost:5000/items", Craft).then((data) => {
-      if (data.data.insertedId) {
-        Swal.fire({
-          title: "success!",
-          text: "Data added Successfully",
-          icon: "success",
-          confirmButtonText: "ok",
-        });
-      }
-    });
+    axios
+      .put(`http://localhost:5000/items-update/${param.id}`, Craft)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Data updated successfully",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        }
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -61,13 +63,14 @@ const AddCraft = () => {
         </Link>
         <div className="bg-gray-100 rounded-md p-16 mt-6">
           <div className="space-y-7">
-            <h1 className="text-center text-4xl font-bold tracking-tight text-black">
-              Add Craft Item
+            <h1 className="text-center text-[#0DBC95] text-4xl font-bold tracking-tight ">
+              Update Art & Craft Item
             </h1>
             <p className="w-[80%] mx-auto rale-way text-center ">
-              Explore an array of creative possibilities as you effortlessly
-              enhance your collection with our intuitive feature. Discover,
-              curate, and add new items to your craft inventory seamlessly.
+              "Unleash Your Creativity with Our Latest Art & Craft Supplies!
+              From vibrant paints to intricate beads, explore endless
+              possibilities to express your imagination and craft masterpieces
+              that inspire."
             </p>
           </div>
           <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
@@ -77,32 +80,6 @@ const AddCraft = () => {
             >
               <fieldset className="grid grid-cols-2 gap-6 p-6 ">
                 <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                  <div className="col-span-full sm:col-span-3 ">
-                    <label htmlFor=" item_name" className="text-sm">
-                      User Name
-                    </label>
-                    <input
-                      id="  User Name"
-                      type="text"
-                      value={user?.displayName}
-                      placeholder="Enter User Name"
-                      className="w-full p-2 rale-way border-[#0DBC95]  bg-gray-200 border-[1px] text-sm outline-0  "
-                    />
-                  </div>
-
-                  <div className="col-span-full sm:col-span-3">
-                    <label htmlFor="subcategory_Name" className="text-sm">
-                      User Email
-                    </label>
-                    <input
-                      id="User Email"
-                      type="email"
-                      name="email"
-                      value={user?.email}
-                      placeholder="Enter User Email"
-                      className="w-full bg-gray-200 border-[#0DBC95] border-[1px] p-2 rale-way text-sm outline-0  "
-                    />
-                  </div>
                   <div className="col-span-full sm:col-span-3">
                     <label htmlFor="subcategory_Name" className="text-sm">
                       Item name
@@ -222,7 +199,7 @@ const AddCraft = () => {
                   <input
                     className="bg-[#0DBC95] p-1 w-full font-bold "
                     type="submit"
-                    value="Add Craft"
+                    value="Update"
                   />
                 </div>
               </fieldset>
@@ -234,4 +211,4 @@ const AddCraft = () => {
   );
 };
 
-export default AddCraft;
+export default UpdateArtAndCraft;
