@@ -7,8 +7,10 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
   if (loading) {
     return (
-      <div className="flex justify-center items-center h-[500px]">
-        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-600"></div>
+      <div className="flex items-center justify-center h-[500px] space-x-2">
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
       </div>
     );
   }
