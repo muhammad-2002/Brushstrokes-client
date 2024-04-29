@@ -7,7 +7,7 @@ import TopNav from "../components/header/TopNav/TopNav";
 const MainLayout = () => {
   return (
     <div>
-      <div className="sm:h-0 md:h-[36px] w-full">
+      <div className="h-[90px] raw:h-[800px] sm:h-[66px] md:h-[36px] w-full">
         <TopNav></TopNav>
       </div>
       <div className="h-[64px]">

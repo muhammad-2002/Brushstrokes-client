@@ -1,10 +1,12 @@
 import React from "react";
+import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Import Swiper styles
 
 const Banner = () => {
   return (
     <Swiper
+      modules={[Autoplay]}
       autoplay={{
         delay: 3000,
         disableOnInteraction: false,

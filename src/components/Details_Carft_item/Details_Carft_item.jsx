@@ -34,7 +34,7 @@ const Details_Carft_item = () => {
             </div>
 
             <div className="flex flex-col justify-start  items-start p-2 text-center rounded-sm lg:max-w-[50%] xl:max-w-lg lg:text-left border-[#0DBC95] border-2">
-              <h1 className="text-xl font-bold leading-none sm:text-3xl">
+              <h1 className="text-xl font-bold leading-none sm:text-3 2xl">
                 ITEM NAME: {ItemName}
               </h1>
               <br />
@@ -42,23 +42,21 @@ const Details_Carft_item = () => {
                 Subcategory Name: {subcategoryName}
               </h1>
               <p className="mt-6 mb-8 text-lg sm:mb-5">{description}</p>
-              <div className="flex flex-col gap-3 md:flex-row">
-                <div className="flex justify-start md:justify-between  md:w-[50%] lg:w-[30%] items-start font-bold">
+              <div className="flex flex-col gap-3 ">
+                <div className="flex justify-start gap-3  md:w-full  items-start font-bold">
                   <p>Rating: {rating}</p>
                   <p>Price: ${price}</p>
                 </div>
-                <div className="flex justify-start md:justify-between flex-col  font-bold items-start">
+                <div className="flex justify-start md:justify-between  md:w-full  items-start font-bold">
                   <p>Stock Status: {stock}</p>
-                  <p>Processing Time: {processing_time || "00"}hours</p>
+                  <p>Processing Time: {processing_time}hours</p>
                 </div>
               </div>
 
-              <div className=" border w-full text-white  flex justify-center items-center gap-3 mt-4 bg-[#0DBC95]">
+              <Link className=" border w-full text-white  flex justify-center items-center gap-3 mt-4 bg-[#0DBC95]">
                 <IoArrowBackOutline />
-                <Link to="/" className="px- py-2 text-lg   font-bold  ">
-                  Go Back
-                </Link>
-              </div>
+                <p className="px- py-2 text-lg   font-bold  ">Go Back</p>
+              </Link>
             </div>
           </div>
         </section>

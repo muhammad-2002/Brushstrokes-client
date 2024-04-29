@@ -11,10 +11,10 @@ const Craft_items = () => {
   return (
     <>
       <div className="space-y-7 flex flex-col justify-center items-center">
-        <h1 className="text-center text-3xl mt-8 font-bold tracking-tight text-black">
-          Craft Item
+        <h1 className="text-center text-3xl mt-8 border-b-2 border-[#0DBC95] font-bold tracking-tight text-[#0DBC95]">
+          Art Item
         </h1>
-        <p className="w-[75%] mx-auto rale-way text-center ">
+        <p className="w-[90%] md:w-[75%] mx-auto rale-way text-center ">
           Immerse yourself in the world of painting and drawing, where every
           stroke tells a story and every sketch captures a moment. Unleash your
           imagination and explore the boundless possibilities of visual

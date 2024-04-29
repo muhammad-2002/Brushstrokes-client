@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        'tall': { 'raw': '(min-height: 800px)' },
+        // => @media (min-height: 800px) { ... }
+      },
       keyframes: {
         animatedgradient: {
           '0%': { backgroundPosition: '0% 50%' },

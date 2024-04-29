@@ -5,7 +5,7 @@ import { IoLogoFacebook } from "react-icons/io5";
 
 const TopNav = () => {
   return (
-    <div className="px-5  z-30 py-2 hidden md:block text-sm fixed bg-[#123841] lg:flex flex-col sm:flex-row justify-between items-center rale-way w-full">
+    <div className="sm:px-5  z-30 py-2  md:block text-sm fixed bg-[#123841] lg:flex flex-col sm:flex-row justify-between items-center rale-way w-full">
       <div className="mb-2 sm:mb-0">
         {" "}
         <h2 className="font-bold text-white flex justify-center items-center">
