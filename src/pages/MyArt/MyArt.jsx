@@ -9,7 +9,7 @@ const MyArt = () => {
   const param = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/items-by-email/${param.email}`)
+    fetch(`https://brushstoks.vercel.app/items-by-email/${param.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyItems(data);

@@ -34,7 +34,7 @@ const MyCraftCard = ({ item, myItems, setMyItems }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:5000/items/${id}`)
+          .delete(`https://brushstoks.vercel.app/items/${id}`)
           .then((res) => {
             if (res.data.deletedCount > 0) {
               Swal.fire({

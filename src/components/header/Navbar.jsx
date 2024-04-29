@@ -85,26 +85,26 @@ const Navbar = () => {
                       : "hover:text-[#0DBC95]"
                   }
                 >
-                  <span>Add Craft</span>
+                  <span>Add Art</span>
                 </NavLink>
               </li>
             )}
-            {user && (
-              <li>
-                <NavLink
-                  to={`/my-art&craft/${user.email}`}
-                  className={({ isActive, isPending }) =>
-                    isPending
-                      ? "pending"
-                      : isActive
-                      ? "text-[#0DBC95] border-b-4 border-[#0DBC95]"
-                      : "hover:text-[#0DBC95]"
-                  }
-                >
-                  <span>MyArt&Craft</span>
-                </NavLink>
-              </li>
-            )}
+
+            <li>
+              <NavLink
+                to={`/my-art&craft/${user?.email}`}
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-[#0DBC95] border-b-4 border-[#0DBC95]"
+                    : "hover:text-[#0DBC95]"
+                }
+              >
+                <span>MyArt</span>
+              </NavLink>
+            </li>
+
             <li>
               <NavLink
                 to="/all_craft_item"
@@ -116,7 +116,7 @@ const Navbar = () => {
                     : "hover:text-[#0DBC95]"
                 }
               >
-                <span>All Craft Item</span>
+                <span>All Art Item</span>
               </NavLink>
             </li>
           </ul>
@@ -250,7 +250,7 @@ const Navbar = () => {
                       : "hover:text-[#0DBC95]"
                   }
                 >
-                  <span>Add Craft</span>
+                  <span>Add Art</span>
                 </NavLink>
               </li>
             )}

@@ -167,6 +167,7 @@ const SignIn = () => {
               </button>
               <button
                 aria-label="Log in with Twitter"
+                onClick={() => createForTwitter()}
                 className="p-3 rounded-sm"
               >
                 <svg
@@ -178,6 +179,7 @@ const SignIn = () => {
                 </svg>
               </button>
               <button
+                onClick={() => createForGithub()}
                 aria-label="Log in with GitHub"
                 className="p-3 rounded-sm"
               >

@@ -5,7 +5,7 @@ const Details_Carft_item = () => {
   const param = useParams();
   const [singleData, setSingleData] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/items-for-craft/${param.id}`)
+    fetch(`https://brushstoks.vercel.app/items-for-craft/${param.id}`)
       .then((res) => res.json())
       .then((data) => setSingleData(data));
   }, []);

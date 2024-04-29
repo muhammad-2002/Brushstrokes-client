@@ -8,7 +8,7 @@ const AllArtCraftItems = () => {
   useEffect(() => {
     // Fetch data from the database using Axios
     axios
-      .get("http://localhost:5000/items")
+      .get("https://brushstoks.vercel.app/items")
       .then((response) => setItems(response.data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
