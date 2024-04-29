@@ -68,7 +68,9 @@ const Footer = () => {
         <div className="max-w-screen-xl mx-auto md:px-2">
           <div className="md:flex justify-between">
             <aside>
-              <p>@2024 Brush Strokes. All Rights Reserved.</p>
+              <p className="text-white">
+                @2024 Brush Strokes. All Rights Reserved.
+              </p>
             </aside>
             <nav>
               <div className="grid grid-flow-col gap-4">

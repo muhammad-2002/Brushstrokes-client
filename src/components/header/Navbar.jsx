@@ -41,7 +41,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-w-[1920px] mx-auto rale-way">
+    <div className=" w-full  mx-auto fixed z-40 rale-way">
       <header className="bg-white shadow-lg py-2  flex justify-center items-center w-full   md:px-[50px] ">
         <Link to="/" className=" pl-2 flex flex-shrink-0 items-center">
           {/* <img
@@ -53,11 +53,11 @@ const Navbar = () => {
             <PiPencilCircle />
           </p>
           <h1 className="font-bold text-xl text-black md:text-3xl">
-            <span className="">BRUSH</span> STROKES
+            <span className="text-[#0DBC95]">BRUSH</span> STROKES
           </h1>
         </Link>
         {/* middle */}
-        <nav className="header-links md:contents font-medium text-base  hidden ">
+        <nav className="header-links md:contents  font-medium text-base  hidden ">
           <ul className="flex gap-8 items-center ml-4 xl:ml-8 mr-auto w-full justify-center dark:text-black">
             <li>
               <NavLink

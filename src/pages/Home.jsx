@@ -1,10 +1,12 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import Banner from "../components/Banner/Banner";
+import Craft_items from "../components/Craft Items/Craft_items";
 
 const Home = () => {
   return (
     <div>
-      <Outlet></Outlet>
+      <Banner></Banner>
+      <Craft_items></Craft_items>
     </div>
   );
 };

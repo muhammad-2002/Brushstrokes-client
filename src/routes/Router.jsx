@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../MainLayout/MainLayout";
 import AddCraft from "../components/Add Craft/AddCraft";
+import Details_Carft_item from "../components/Details_Carft_item/Details_Carft_item";
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import SignIn from "../components/SignIn/SignIn";
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/update-art&carft/:id",
         element: <UpdateArtAndCraft></UpdateArtAndCraft>,
+      },
+      {
+        path: "/details_craft_item/:id",
+        element: <Details_Carft_item></Details_Carft_item>,
       },
     ],
   },
