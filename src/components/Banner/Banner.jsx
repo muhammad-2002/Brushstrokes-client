@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { Typewriter } from "react-simple-typewriter";
 import { Autoplay } from "swiper/modules";
+// import "react-simple-typewriter/dist/index.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css"; // Import Swiper styles
 
 const Banner = () => {
+  const [showFinalWord, setShowFinalWord] = useState(false);
+
+  const handleTypewriterFinish = () => {
+    setShowFinalWord(true);
+  };
   return (
     <Swiper
       modules={[Autoplay]}
       autoplay={{
-        delay: 3000,
+        delay: 4000,
         disableOnInteraction: false,
       }}
       className="max-h-[calc(100vh-100px)] w-full"
@@ -25,7 +32,15 @@ const Banner = () => {
           <div className="absolute -top-16 md:top-0 left-5 md:left-10 lg:left-48 w-[90%] md:w-[65%] h-full flex justify-center items-center">
             <div className="text-white text-center space-y-4">
               <h1 className="text-2xl md:text-4xl font-bold">
-                Unleash Your Creativity
+                <Typewriter
+                  words={["Unleash", "Your", "Of Creativity..."]}
+                  loop={true}
+                  cursor
+                  cursorStyle=" "
+                  typeSpeed={50}
+                  deleteSpeed={50}
+                  delaySpeed={500}
+                />
               </h1>
               <p>
                 Discover the joy of expression through art. Whether you're a
@@ -50,7 +65,16 @@ const Banner = () => {
           <div className="absolute -top-16 md:top-0 left-5 md:left-10 lg:left-48 w-[90%] md:w-[65%] h-full flex justify-center items-center">
             <div className="text-white text-center space-y-4">
               <h1 className="text-2xl md:text-4xl font-bold">
-                Explore the World of Drawing
+                <Typewriter
+                  words={["Explore", "The World", "Of Drawing..."]}
+                  loop={false}
+                  cursor
+                  cursorStyle=" "
+                  typeSpeed={50}
+                  deleteSpeed={50}
+                  delaySpeed={500}
+                  onFinishTyping={handleTypewriterFinish}
+                />
               </h1>
               <p>
                 Dive into the captivating world of drawing and let your
@@ -63,6 +87,7 @@ const Banner = () => {
           </div>
         </div>
       </SwiperSlide>
+
       <SwiperSlide>
         <div className="relative">
           <div>
@@ -77,7 +102,16 @@ const Banner = () => {
           <div className="absolute -top-16 md:top-0 left-5 md:left-10 lg:left-48 w-[90%] md:w-[65%] h-full flex justify-center items-center">
             <div className="text-white text-center space-y-4">
               <h1 className="text-2xl md:text-4xl font-bold">
-                Embrace the Beauty of Artistry
+                <Typewriter
+                  words={["Embrace", "The Beauty", "Of Artistry"]}
+                  loop={false}
+                  cursor
+                  cursorStyle=" "
+                  typeSpeed={50}
+                  deleteSpeed={50}
+                  delaySpeed={500}
+                  onFinishTyping={handleTypewriterFinish}
+                />
               </h1>
               <p>
                 Experience the magic of artistry and discover the power of

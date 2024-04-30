@@ -71,17 +71,17 @@ const MyCraftCard = ({ item, myItems, setMyItems }) => {
             <p className="font-bold">Stock Status: {stock}</p>
             <p className="font-bold">Customization: {customization}</p>
           </div>
-          <div className="card-actions justify-start gap-4">
+          <div className="card-actions cursor-pointer justify-start gap-4">
             <Link
               to={`/update-art&carft/${_id}`}
-              className="bg-[#0DBC95] rounded-sm border-solid border-[#0DBC95] border-2 py-2 px-3 w-[100px] hover:text-white text-center font-bold"
+              className="bg-[#0DBC95]  rounded-sm border-solid border-[#0DBC95] border-2 py-2 px-3 w-[100px] hover:text-white text-center font-bold"
             >
               Update
             </Link>
             <div>
               <button
                 onClick={() => handleDelete(_id)}
-                className="bg-[#e90000] border-solid border-[#e90000] border-2 py-2 px-3 w-[100px] rounded-sm text-center hover:text-white font-bold"
+                className="bg-[#e90000] border-solid border-[#e90000] border-2 py-2 px-3 w-[100px] rounded-sm text-center cursor-pointer hover:text-white font-bold"
               >
                 Delete
               </button>

@@ -13,6 +13,7 @@ const Home = () => {
       <div className="w-[90%] mx-auto mt-8">
         <ArtCatagories></ArtCatagories>
         <PhotoGallery></PhotoGallery>
+
         <VisitorSaying></VisitorSaying>
       </div>
     </div>

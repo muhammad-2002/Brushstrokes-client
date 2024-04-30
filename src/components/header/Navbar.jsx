@@ -14,23 +14,20 @@ const Navbar = () => {
   const [sideOpen, setSideOpen] = useState(true);
   const [userOpen, setUserOpen] = useState(false);
   const navigate = useNavigate();
-
-  const [theme, setTheme] = useState("light");
+  //set theme
+  const savedTheme = localStorage.getItem("theme") || "light";
+  const [theme, setTheme] = useState(savedTheme);
 
   const handleTheme = (e) => {
-    if (e.target.checked) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
+    setTheme(e.target.checked ? "dark" : "light");
   };
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const item = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", item);
-  }, [theme]);
-  // const { user, logOut } = useAuth() || {};
 
+  useEffect(() => {
+    // Store the current theme preference in localStorage
+    localStorage.setItem("theme", theme);
+    // Set the theme on the document element to apply styles
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
   const handleLogOut = () => {
     logOutUser()
       .then((result) => {
@@ -41,7 +38,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" w-full  mx-auto fixed z-40 rale-way">
+    <div className=" w-full  mx-auto fixed z-40  rale-way">
       <header className="bg-white shadow-lg py-2  flex justify-center items-center w-full   md:px-[50px] ">
         <Link to="/" className=" pl-2 flex flex-shrink-0 items-center">
           {/* <img
@@ -129,6 +126,7 @@ const Navbar = () => {
             <label className="cursor-pointer grid place-items-center">
               <input
                 type="checkbox"
+                checked={theme === "dark"}
                 onChange={handleTheme}
                 className="toggle theme-controller bg-[#0DBC95] hover:bg-[bg-[#0DBC95] row-start-1 col-start-1 col-span-2"
               />
@@ -178,7 +176,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => navigate("/signIn")}
-                className="bg-[#0DBC95] inline-flex justify-center items-center gap-2 hover:bg-[#0DBC95]  duration-200 text-white font-bold px-2 xl:px-6 py-1 rounded"
+                className="bg-[#0DBC95] inline-flex sm:block hidden justify-center items-center gap-2 hover:bg-[#0DBC95]  duration-200 text-white font-bold px-2 xl:px-6 py-1 rounded"
               >
                 <LuLogIn />
                 Login
@@ -240,7 +238,7 @@ const Navbar = () => {
             {user && (
               <li>
                 <NavLink
-                  onClick={() => setSideOpen()}
+                  onClick={() => setSideOpen(!sideOpen)}
                   to="/add_craft"
                   className={({ isActive, isPending }) =>
                     isPending
@@ -257,7 +255,7 @@ const Navbar = () => {
             {user && (
               <li>
                 <NavLink
-                  onClick={() => setSideOpen()}
+                  onClick={() => setSideOpen(!sideOpen)}
                   to="/my-art&craft"
                   className={({ isActive, isPending }) =>
                     isPending
@@ -273,7 +271,7 @@ const Navbar = () => {
             )}
             <li>
               <NavLink
-                onClick={() => setSideOpen()}
+                onClick={() => setSideOpen(!sideOpen)}
                 to="/all_craft_item"
                 className={({ isActive, isPending }) =>
                   isPending
@@ -292,18 +290,25 @@ const Navbar = () => {
         <div className="ml-8 mt-8">
           <div className={`flex flex-col gap-2 top-16 pr-2`}>
             <button className="border-2 mx-auto border-[#0DBC95] rounded-full w-[40px]">
-              <img
-                src={user?.photoURL}
-                alt=""
-                className="w-full h-full rounded-full"
-              />
+              {user ? (
+                <img
+                  src={user?.photoURL}
+                  alt=""
+                  className="w-full h-full rounded-full"
+                />
+              ) : (
+                <h1>no user</h1>
+              )}
             </button>
             <p className="text-lg font-semibold text-center">
               {user?.displayName}
             </p>
             {user ? (
               <button
-                onClick={() => handleLogOut()}
+                onClick={() => {
+                  handleLogOut();
+                  setSideOpen(!sideOpen);
+                }}
                 className="bg-[#0DBC95] hover:bg-[#123841] duration-200 text-white font-bold px-4  py-1 rounded inline-flex items-center gap-2 justify-center "
               >
                 logout
@@ -311,7 +316,10 @@ const Navbar = () => {
               </button>
             ) : (
               <button
-                onClick={() => navigate("/signIn")}
+                onClick={() => {
+                  navigate("/signIn");
+                  setSideOpen(!sideOpen);
+                }}
                 className="bg-[#0DBC95] hover:bg-[#123841] duration-200 text-white font-bold px-4  py-1 rounded inline-flex items-center gap-2 justify-center "
               >
                 <LuLogIn />

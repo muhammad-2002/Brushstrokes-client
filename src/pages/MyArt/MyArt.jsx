@@ -1,14 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { AuthContext } from "../../Provider/Provider";
 import MyCraftCard from "./../../components/MyCraftCard/MyCraftCard";
 
 const MyArt = () => {
   const [myItems, setMyItems] = useState([]);
   const [sortOption, setSortOption] = useState("");
-  const { user } = useContext(AuthContext);
-  const param = useParams();
-  console.log(param);
+  const { user, loading, setLoading } = useContext(AuthContext);
 
   useEffect(() => {
     fetch(`https://brushstoks.vercel.app/items-by-email/${user.email}`)

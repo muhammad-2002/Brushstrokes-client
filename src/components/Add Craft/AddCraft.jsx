@@ -23,6 +23,7 @@ const AddCraft = () => {
     const image = form.image.value;
     const rating = form.rating.value;
     const email = user.email;
+    const userPhoto = user.photoURL;
     const Craft = {
       name,
       ItemName,
@@ -35,6 +36,7 @@ const AddCraft = () => {
       rating,
       processing_time,
       email,
+      userPhoto,
     };
 
     axios.post("https://brushstoks.vercel.app/items", Craft).then((data) => {

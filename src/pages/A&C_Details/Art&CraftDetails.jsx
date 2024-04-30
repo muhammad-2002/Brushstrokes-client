@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Provider/Provider";
 
 const ArtCraftDetails = () => {
   const loaderData = useLoaderData();
@@ -13,17 +14,39 @@ const ArtCraftDetails = () => {
     subcategoryName,
     description,
     price,
+    userPhoto,
 
     stock,
     customization,
     image,
     rating,
   } = loaderData;
+  const { user, loading } = useContext(AuthContext);
+  if (loaderData) {
+  }
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-[500px] space-x-2">
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+      </div>
+    );
+  }
   return (
     <div className="mt-10 w-[90%] mx-auto">
       <div>
         <section className="dark:bg-gray-100 dark:text-gray-800">
-          <div className="flex justify-center flex-col items-center pt-10">
+          <div className="flex flex-col items-center justify-center">
+            <div className="">
+              <img
+                alt=""
+                className="w-28 h-88 mt-4  rounded-full border-2 border-[#0DBC95]"
+                src={userPhoto}
+              />
+            </div>
+          </div>
+          <div className="flex justify-start flex-col items-center pt-1">
             <h1 className="text-xl font-bold text-black">USER NAME: {name}</h1>
 
             <h1 className="text-xl font-bold text-black">

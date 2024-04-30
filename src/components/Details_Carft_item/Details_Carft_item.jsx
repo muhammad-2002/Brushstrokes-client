@@ -1,13 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
+import { AuthContext } from "../../Provider/Provider";
 const Details_Carft_item = () => {
+  const { user, loading, setLoading } = useContext(AuthContext);
   const param = useParams();
   const [singleData, setSingleData] = useState([]);
+
   useEffect(() => {
+    setLoading(true);
     fetch(`https://brushstoks.vercel.app/items-for-craft/${param.id}`)
       .then((res) => res.json())
-      .then((data) => setSingleData(data));
+      .then((data) => {
+        setSingleData(data);
+        setLoading(false);
+      });
   }, []);
   const {
     name,
@@ -23,6 +30,16 @@ const Details_Carft_item = () => {
     email,
     _id,
   } = singleData;
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center h-[500px] space-x-2">
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+        <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="mt-10 w-[90%] mx-auto">

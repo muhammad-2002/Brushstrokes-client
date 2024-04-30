@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -7,8 +7,19 @@ import { AuthContext } from "../../Provider/Provider";
 
 const UpdateArtAndCraft = ({}) => {
   const param = useParams();
+  const [data, setData] = useState([]);
+  console.log(data);
   console.log(param);
+
   const { user } = useContext(AuthContext);
+  console.log(user.photoURL);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/items-update/${param.id}`)
+      .then((response) => response.json())
+      .then((data) => setData(data))
+      .catch((err) => console.log(err));
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,9 +33,11 @@ const UpdateArtAndCraft = ({}) => {
     const customization = form.customization.value;
     const image = form.image.value;
     const rating = form.rating.value;
+    const userPhoto = user.photoURL;
 
     const Craft = {
       ItemName,
+      userPhoto,
       subcategoryName,
       description,
       price,
@@ -50,7 +63,18 @@ const UpdateArtAndCraft = ({}) => {
       })
       .catch((error) => console.log(error));
   };
-
+  const {
+    ItemName,
+    subcategoryName,
+    description,
+    price,
+    stock,
+    customization,
+    image,
+    rating,
+    processing_time,
+    userPhoto,
+  } = data;
   return (
     <div className="w-[90%] mx-auto ">
       <div>
@@ -86,6 +110,7 @@ const UpdateArtAndCraft = ({}) => {
                     </label>
                     <input
                       type="text"
+                      defaultValue={ItemName}
                       name="ItemName"
                       placeholder="Enter Item_name"
                       className="w-full border-[#0DBC95] border-[1px] p-2 rale-way text-sm outline-0  "
@@ -96,6 +121,7 @@ const UpdateArtAndCraft = ({}) => {
                       Subcategory_Name
                     </label>
                     <input
+                      defaultValue={subcategoryName}
                       id="subcategory_Name"
                       type="text"
                       name="subcategoryName"
@@ -112,6 +138,7 @@ const UpdateArtAndCraft = ({}) => {
                     <input
                       id="short description"
                       type="text"
+                      defaultValue={description}
                       name="description"
                       placeholder="Enter short description"
                       className="w-full border-[#0DBC95] border-[1px] p-2 rale-way text-sm outline-0  "
@@ -122,6 +149,7 @@ const UpdateArtAndCraft = ({}) => {
                       Price
                     </label>
                     <input
+                      defaultValue={price}
                       id="price"
                       type="text"
                       name="price"
@@ -137,6 +165,7 @@ const UpdateArtAndCraft = ({}) => {
                       StockStatus
                     </label>
                     <input
+                      defaultValue={stock}
                       id="lastname"
                       type="text"
                       name="stock"
@@ -149,6 +178,7 @@ const UpdateArtAndCraft = ({}) => {
                       Rating
                     </label>
                     <input
+                      defaultValue={rating}
                       id="lastname"
                       type="text"
                       name="rating"
@@ -161,6 +191,7 @@ const UpdateArtAndCraft = ({}) => {
                       Customization
                     </label>
                     <input
+                      defaultValue={customization}
                       id="lastname"
                       type="text"
                       name="customization"
@@ -173,6 +204,7 @@ const UpdateArtAndCraft = ({}) => {
                       processing_time
                     </label>
                     <input
+                      defaultValue={processing_time}
                       id="stockStatus"
                       type="text"
                       name="processing_time"
@@ -187,6 +219,7 @@ const UpdateArtAndCraft = ({}) => {
                       Image
                     </label>
                     <input
+                      defaultValue={image}
                       id="image"
                       type="text"
                       name="image"
@@ -195,9 +228,10 @@ const UpdateArtAndCraft = ({}) => {
                     />
                   </div>
                 </div>
-                <div className="col-span-full lg:col-span-3 text-white border-[1px]">
+
+                <div className="col-span-full lg:col-span-3  text-white border-[1px]">
                   <input
-                    className="bg-[#0DBC95] p-1 w-full font-bold "
+                    className="bg-[#0DBC95] cursor-pointer p-1 w-full font-bold "
                     type="submit"
                     value="Update"
                   />
