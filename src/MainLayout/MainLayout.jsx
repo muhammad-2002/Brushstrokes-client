@@ -10,7 +10,7 @@ const MainLayout = () => {
       <div className="h-[90px] raw:h-[800px] sm:h-[66px] md:h-[36px] w-full">
         <TopNav></TopNav>
       </div>
-      <div className="h-[64px]">
+      <div className="h-[64px] -mb-3 md:mb-0">
         <Navbar></Navbar>
       </div>
 

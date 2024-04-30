@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <div className=" w-full  mx-auto fixed z-40  rale-way">
-      <header className="bg-white shadow-lg py-2  flex justify-center items-center w-full   md:px-[50px] ">
+      <header className="bg-white shadow-lg py-2 px-4   flex justify-center items-center w-full   md:px-[50px] ">
         <Link to="/" className=" pl-2 flex flex-shrink-0 items-center">
           {/* <img
             className="md:w-[200px] w-[150px] h-[70px]  object-cover"
@@ -176,7 +176,7 @@ const Navbar = () => {
             ) : (
               <button
                 onClick={() => navigate("/signIn")}
-                className="bg-[#0DBC95] inline-flex sm:block hidden justify-center items-center gap-2 hover:bg-[#0DBC95]  duration-200 text-white font-bold px-2 xl:px-6 py-1 rounded"
+                className="bg-[#0DBC95] md:inline-flex hidden justify-center items-center gap-2 hover:bg-[#0DBC95]  duration-200 text-white font-bold px-2 xl:px-6 py-1 rounded"
               >
                 <LuLogIn />
                 Login
@@ -188,7 +188,7 @@ const Navbar = () => {
           <div
             className={`absolute ${
               userOpen ? " " : "hidden"
-            } text-center   flex flex-col justify-center items-center gap-4  shadow-lg bg-white dark:bg-[#123841] px-6 min-w-[200px] py-4 -top-80 md:top-12 -left-34 dark:text-white z-50`}
+            } text-center   flex flex-col justify-center items-center gap-4  shadow-lg bg-white dark:bg-[#123841] px-6 min-w-[200px] py-4 -top-80 md:top-14 -left-34 dark:text-white z-50`}
           >
             <p className="text-lg font-semibold">{user?.displayName}</p>
 
@@ -256,7 +256,7 @@ const Navbar = () => {
               <li>
                 <NavLink
                   onClick={() => setSideOpen(!sideOpen)}
-                  to="/my-art&craft"
+                  to={`/my-art&craft/${user?.email}`}
                   className={({ isActive, isPending }) =>
                     isPending
                       ? "pending"
@@ -265,7 +265,7 @@ const Navbar = () => {
                       : "hover:text-[#0DBC95]"
                   }
                 >
-                  <span>My-art&craft</span>
+                  <span>My-Art</span>
                 </NavLink>
               </li>
             )}
@@ -281,7 +281,7 @@ const Navbar = () => {
                     : "hover:text-[#0DBC95]"
                 }
               >
-                <span>All Craft Item</span>
+                <span>All Art Item</span>
               </NavLink>
             </li>
           </ul>

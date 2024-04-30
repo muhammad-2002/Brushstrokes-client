@@ -52,7 +52,7 @@ const AddCraft = () => {
   };
 
   return (
-    <div className="w-[90%] mx-auto ">
+    <div className="md:w-[90%] w-[95%] mx-auto ">
       <div>
         <Link to="/">
           <p className="inline-flex justify-center items-center gap-2 heading-color font-bold text-md pt-6 text-[#0DBC95] ">
@@ -61,12 +61,12 @@ const AddCraft = () => {
             Back To Home
           </p>
         </Link>
-        <div className="bg-gray-100 rounded-md p-16 mt-6">
+        <div className="bg-gray-100 rounded-md md:p-16  mt-6">
           <div className="space-y-7">
-            <h1 className="text-center text-4xl font-bold tracking-tight text-black">
-              Add Craft Item
+            <h1 className="text-center md:pt-0 pt-5 text-4xl font-bold tracking-tight text-black">
+              Add Art Item
             </h1>
-            <p className="w-[80%] mx-auto rale-way text-center ">
+            <p className="w-full md:[85%] mx-auto rale-way text-center ">
               Explore an array of creative possibilities as you effortlessly
               enhance your collection with our intuitive feature. Discover,
               curate, and add new items to your craft inventory seamlessly.
@@ -224,7 +224,7 @@ const AddCraft = () => {
                   <input
                     className="bg-[#0DBC95] p-1 w-full font-bold "
                     type="submit"
-                    value="Add Craft"
+                    value="Add Art"
                   />
                 </div>
               </fieldset>
