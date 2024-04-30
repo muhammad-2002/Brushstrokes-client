@@ -254,21 +254,23 @@ const Navbar = () => {
                 </NavLink>
               </li>
             )}
-            <li>
-              <NavLink
-                onClick={() => setSideOpen()}
-                to="/my-art&craft"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "text-[#0DBC95] border-b-4 border-[#0DBC95]"
-                    : "hover:text-[#0DBC95]"
-                }
-              >
-                <span>My-art&craft</span>
-              </NavLink>
-            </li>
+            {user && (
+              <li>
+                <NavLink
+                  onClick={() => setSideOpen()}
+                  to="/my-art&craft"
+                  className={({ isActive, isPending }) =>
+                    isPending
+                      ? "pending"
+                      : isActive
+                      ? "text-[#0DBC95] border-b-4 border-[#0DBC95]"
+                      : "hover:text-[#0DBC95]"
+                  }
+                >
+                  <span>My-art&craft</span>
+                </NavLink>
+              </li>
+            )}
             <li>
               <NavLink
                 onClick={() => setSideOpen()}

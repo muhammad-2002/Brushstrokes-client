@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ArtCatagories = () => {
   const [catagorey, setCatagorey] = useState([]);
@@ -23,7 +24,8 @@ const ArtCatagories = () => {
       </div>
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
         {catagorey.map((item) => (
-          <div
+          <Link
+            to={`/sub-categories/${item.subcategory_name}`}
             key={item._id}
             className="hover:scale-95 transition-transform rounded-[6px]"
           >
@@ -42,7 +44,7 @@ const ArtCatagories = () => {
                 <p>{item.additional_info}</p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

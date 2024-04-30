@@ -53,7 +53,10 @@ const Details_Carft_item = () => {
                 </div>
               </div>
 
-              <Link className=" border w-full text-white  flex justify-center items-center gap-3 mt-4 bg-[#0DBC95]">
+              <Link
+                to="/"
+                className=" border w-full text-white  flex justify-center items-center gap-3 mt-4 bg-[#0DBC95]"
+              >
                 <IoArrowBackOutline />
                 <p className="px- py-2 text-lg   font-bold  ">Go Back</p>
               </Link>

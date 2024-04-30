@@ -88,6 +88,7 @@ const Provider = ({ children }) => {
     logInEmailAndPassword,
     UpdateUser,
     loading,
+    setLoading,
   };
   return (
     <div>

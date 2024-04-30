@@ -5,6 +5,7 @@ import Details_Carft_item from "../components/Details_Carft_item/Details_Carft_i
 import ErrorPage from "../components/ErrorPage/ErrorPage";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import SignIn from "../components/SignIn/SignIn";
+import SubCategories from "../components/SubCategories/SubCategories";
 import UpdateArtAndCraft from "../components/UpdateArt&Craft/UpdateArtAndCraft";
 import Register from "../components/register/Register";
 import ArtCraftDetails from "../pages/A&C_Details/Art&CraftDetails";
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: "/details_craft_item/:id",
         element: <Details_Carft_item></Details_Carft_item>,
+      },
+      {
+        path: "/sub-categories/:sub_catetagory_name",
+        element: <SubCategories></SubCategories>,
       },
     ],
   },

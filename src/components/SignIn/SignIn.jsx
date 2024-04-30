@@ -21,6 +21,7 @@ const SignIn = () => {
     createForGithub,
     createForTwitter,
     loading,
+    setLoading,
   } = useContext(AuthContext);
   const {
     register,

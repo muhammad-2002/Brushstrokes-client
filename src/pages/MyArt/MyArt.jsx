@@ -51,7 +51,7 @@ const MyArt = () => {
             item={item}
             myItems={myItems}
             setMyItems={setMyItems}
-            key={item._id} // Assuming _id is a unique identifier for the item
+            key={item._id}
           />
         ))}
       </div>
