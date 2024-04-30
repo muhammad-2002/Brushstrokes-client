@@ -1,8 +1,10 @@
 import axios from "axios";
 import React from "react";
+import { FaRegEye } from "react-icons/fa";
+import { GrUpdate } from "react-icons/gr";
+import { MdDeleteOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-
 const MyCraftCard = ({ item, myItems, setMyItems }) => {
   const {
     name,
@@ -20,9 +22,8 @@ const MyCraftCard = ({ item, myItems, setMyItems }) => {
   } = item;
 
   const handleDelete = (id) => {
-    console.log(id);
     const remaining = myItems.filter((item) => item._id !== id);
-    console.log(remaining);
+
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -74,17 +75,27 @@ const MyCraftCard = ({ item, myItems, setMyItems }) => {
           <div className="card-actions cursor-pointer justify-start gap-4">
             <Link
               to={`/update-art&carft/${_id}`}
-              className="bg-[#0DBC95]  rounded-sm border-solid border-[#0DBC95] border-2 py-2 px-3 w-[100px] hover:text-white text-center font-bold"
+              className="bg-[#0DBC95]  rounded-sm border-solid  py-2 px-3 text-xl hover:bg-black text-white  text-center font-bold"
             >
-              Update
+              <GrUpdate />
             </Link>
             <div>
               <button
                 onClick={() => handleDelete(_id)}
-                className="bg-[#e90000] border-solid border-[#e90000] border-2 py-2 px-3 w-[100px] rounded-sm text-center cursor-pointer hover:text-white font-bold"
+                className="bg-[#e90000] border-solid   py-2 px-3 text-white text-xl hover:bg-black rounded-sm text-center cursor-pointer hover:text-white font-bold"
               >
-                Delete
+                <MdDeleteOutline />
               </button>
+            </div>
+            <div>
+              <div className="card-actions cursor-pointer justify-start gap-4">
+                <Link
+                  to={`/art&craft_details/${_id}`}
+                  className="bg-[#5c5c5b] border-solid   py-2 px-3 text-white text-xl hover:bg-black rounded-sm text-center cursor-pointer hover:text-white font-bold"
+                >
+                  <FaRegEye />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
