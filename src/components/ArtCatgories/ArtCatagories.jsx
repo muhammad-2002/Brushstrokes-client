@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ArtCatagories = () => {
   const [catagorey, setCatagorey] = useState([]);
   useEffect(() => {
-    fetch("https://brushstoks.vercel.app/catagories")
+    fetch("https://brushstrock.vercel.app/catagories")
       .then((res) => res.json())
       .then((data) => setCatagorey(data));
   }, []);

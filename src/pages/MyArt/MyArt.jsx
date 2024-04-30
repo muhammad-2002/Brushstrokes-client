@@ -9,7 +9,7 @@ const MyArt = () => {
   const { user, loading, setLoading } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`https://brushstoks.vercel.app/items-by-email/${user.email}`)
+    fetch(`https://brushstrock.vercel.app/items-by-email/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyItems(data);

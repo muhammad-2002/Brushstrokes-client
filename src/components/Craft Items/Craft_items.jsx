@@ -4,7 +4,7 @@ import Craft_item_Card from "../Craft_item_Card/Craft_item_Card";
 const Craft_items = () => {
   const [craftItem, setCraftItem] = useState([]);
   useEffect(() => {
-    fetch("https://brushstoks.vercel.app/items")
+    fetch("https://brushstrock.vercel.app/items")
       .then((res) => res.json())
       .then((data) => setCraftItem(data));
   }, []);

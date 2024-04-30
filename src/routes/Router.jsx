@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "/art&craft_details/:id",
         loader: ({ params }) =>
-          fetch(`https://brushstoks.vercel.app/items/${params.id}`),
+          fetch(`https://brushstrock.vercel.app/items/${params.id}`),
         element: (
           <PrivateRoute>
             <ArtCraftDetails></ArtCraftDetails>

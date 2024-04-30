@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/Provider";
 
 const Craft_item_Card = ({ item }) => {
+  const { setLoading } = useContext(AuthContext);
   const {
     name,
     ItemName,

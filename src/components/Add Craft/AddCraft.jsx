@@ -44,7 +44,7 @@ const AddCraft = () => {
       userPhoto: user.photoURL,
     };
 
-    axios.post("https://brushstoks.vercel.app/items", Craft).then((data) => {
+    axios.post("https://brushstrock.vercel.app/items", Craft).then((data) => {
       if (data.data.insertedId) {
         Swal.fire({
           title: "success!",

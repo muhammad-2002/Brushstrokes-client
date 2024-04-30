@@ -10,7 +10,7 @@ const Details_Carft_item = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://brushstoks.vercel.app/items-for-craft/${param.id}`)
+    fetch(`https://brushstrock.vercel.app/items-for-craft/${param.id}`)
       .then((res) => res.json())
       .then((data) => {
         setSingleData(data);

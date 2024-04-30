@@ -49,7 +49,7 @@ const UpdateArtAndCraft = ({}) => {
     };
 
     axios
-      .put(`https://brushstoks.vercel.app/items-update/${param.id}`, Craft)
+      .put(`https://brushstrock.vercel.app/items-update/${param.id}`, Craft)
       .then((response) => {
         console.log(response.data);
         if (response.data.modifiedCount > 0) {

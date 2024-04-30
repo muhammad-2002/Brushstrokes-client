@@ -9,7 +9,7 @@ const AllArtCraftItems = () => {
 
   useEffect(() => {
     axios
-      .get("https://brushstoks.vercel.app/items")
+      .get("https://brushstrock.vercel.app/items")
       .then((response) => {
         setItems(response.data);
         setLoading(false);
