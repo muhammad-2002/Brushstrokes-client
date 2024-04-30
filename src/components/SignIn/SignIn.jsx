@@ -73,11 +73,13 @@ const SignIn = () => {
             </h1>
             <form
               onSubmit={handleSubmit(handleSubmitLogin)}
-              data-aos="zoom-in"
-              data-aos-duration="1000"
               className="space-y-6"
             >
-              <div className="space-y-1 text-sm">
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="700"
+                className="space-y-1 text-sm"
+              >
                 <div className="relative">
                   <label
                     htmlFor="username"
@@ -102,7 +104,11 @@ const SignIn = () => {
                   </span>
                 )}
               </div>
-              <div className="space-y-1 text-sm relative">
+              <div
+                data-aos="zoom-in"
+                data-aos-duration="900"
+                className="space-y-1 text-sm relative"
+              >
                 <label htmlFor="password" className="block  dark:text-gray-600">
                   Password
                 </label>
@@ -139,6 +145,8 @@ const SignIn = () => {
                 </div>
               </div>
               <button
+                data-aos="zoom-in"
+                data-aos-duration="1100"
                 type="submit"
                 className="block w-full p-3 text-center rounded-sm bg-[#23BF9B] text-white font-bold "
               >

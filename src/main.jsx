@@ -3,6 +3,12 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// Import AOS library
+import AOS from "aos";
+import "aos/dist/aos.css"; // Import AOS CSS file
+
+// Initialize AOS
+AOS.init();
 
 import { HelmetProvider } from "react-helmet-async";
 import Provider from "./Provider/Provider";

@@ -219,22 +219,25 @@ const AddCraft = () => {
                     )}
                   </div>
                   <div className="col-span-full sm:col-span-3">
-                    <label htmlFor="lastname" className="text-sm">
+                    <label htmlFor="customization" className="text-sm">
                       Customization
                     </label>
-                    <input
-                      id="lastname"
-                      type="text"
+                    <select
+                      id="customization"
                       {...register("customization", { required: true })}
-                      placeholder="Enter customization"
-                      className="w-full border-[#0DBC95] border-[1px] p-2 rale-way text-sm outline-0  "
-                    />
+                      className="w-full border-[#0DBC95] border-[1px] p-2 rale-way text-sm outline-0"
+                    >
+                      <option value="">Select...</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
                     {errors.customization && (
                       <span className="text-sm text-red-700">
                         This field is required.
                       </span>
                     )}
                   </div>
+
                   <div className="col-span-full sm:col-span-3">
                     <label htmlFor="lastname" className="text-sm">
                       processing_time

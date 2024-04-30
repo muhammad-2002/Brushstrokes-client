@@ -8,8 +8,13 @@ const VisitorSaying = () => {
           Our Visitor Feedback
         </h1>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ">
-        <div className="flex flex-col  mx-4  ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-7 md:gap-3 lg:grid-cols-4 ">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-offset="200"
+          className="flex flex-col  mx-4  "
+        >
           <div className="px-4 py-12 rounded-t-lg sm:px-2 md:px-3 dark:bg-gray-50">
             <p className="relative px-1 py-1 text-md italic text-center dark:text-gray-800">
               <svg
@@ -46,7 +51,12 @@ const VisitorSaying = () => {
             <p className="text-sm uppercase">Artist</p>
           </div>
         </div>
-        <div className="flex flex-col  mx-4  ">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="1000"
+          data-aos-offset="200"
+          className="flex flex-col  mx-4  "
+        >
           <div className="px-4 py-12 rounded-t-lg sm:px-2 md:px-3 dark:bg-gray-50">
             <p className="relative px-1 py-1 text-md italic text-center dark:text-gray-800">
               <svg
@@ -83,7 +93,12 @@ const VisitorSaying = () => {
             <p className="text-sm uppercase">Cite Engineer</p>
           </div>
         </div>
-        <div className="flex flex-col  mx-4  ">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-offset="200"
+          className="flex flex-col  mx-4  "
+        >
           <div className="px-4 py-12 rounded-t-lg sm:px-2 md:px-3 dark:bg-gray-50">
             <p className="relative px-1 py-1 text-md italic text-center dark:text-gray-800">
               <svg
@@ -120,7 +135,12 @@ const VisitorSaying = () => {
             <p className="text-sm uppercase"> Web Developer</p>
           </div>
         </div>
-        <div className="flex flex-col  mx-4  ">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="1000"
+          data-aos-offset="200"
+          className="flex flex-col  mx-4  "
+        >
           <div className="px-4 py-12 rounded-t-lg sm:px-2 md:px-3 dark:bg-gray-50">
             <p className="relative px-1 py-1 text-md italic text-center dark:text-gray-800">
               <svg

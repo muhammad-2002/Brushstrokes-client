@@ -164,7 +164,7 @@ const Navbar = () => {
           <div>
             {user ? (
               <button
-                onClick={() => setUserOpen(!userOpen)}
+                onMouseEnter={() => setUserOpen(!userOpen)}
                 className="border-2 border-[#0DBC95] rounded-full w-[40px]"
               >
                 <img
