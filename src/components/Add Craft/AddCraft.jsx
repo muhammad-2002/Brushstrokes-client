@@ -71,7 +71,7 @@ const AddCraft = () => {
         </Link>
         <div className="bg-gray-100 rounded-md md:p-16  mt-6">
           <div className="space-y-7">
-            <h1 className="text-center md:pt-0 pt-5 text-4xl font-bold tracking-tight text-black">
+            <h1 className="text-center text-[#0DBC95] md:pt-0 pt-5 text-3xl font-bold tracking-tight ">
               Add Art Item
             </h1>
             <p className="w-full md:[85%] mx-auto rale-way text-center ">
