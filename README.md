@@ -14,6 +14,3 @@ Brushstrokes is an online platform dedicated to showcasing and selling a wide va
 
 ## Contributing
 Contributions are welcome! If you have any suggestions, feature requests, or bug reports, please open an issue on GitHub.
-
-## License
-This project is licensed under the [MIT License](LICENSE).
