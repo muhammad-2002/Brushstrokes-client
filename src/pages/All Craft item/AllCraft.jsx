@@ -25,7 +25,11 @@ const AllArtCraftItems = () => {
         All Art & Craft Items
       </h1>
       {loading ? (
-        <p>Loading...</p>
+        <div className="flex items-center justify-center h-[500px] space-x-2">
+          <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+          <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+          <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
+        </div>
       ) : (
         <div className="overflow-x-auto">
           <table className="w-full table-auto">
