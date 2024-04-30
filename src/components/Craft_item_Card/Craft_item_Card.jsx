@@ -21,11 +21,7 @@ const Craft_item_Card = ({ item }) => {
 
   return (
     <div className="hover:scale-105 transition-transform rounded-[6px]">
-      <div
-        data-aos="zoom-in"
-        data-aos-duration="1000"
-        className="card card-compact bg-base-100 rounded-[6px] md:h-[400px] lg:auto shadow-xl "
-      >
+      <div>
         <figure className="h-[210px] md:h-[180px]">
           <img className="w-full" src={image} alt="Oopps!" />
         </figure>
