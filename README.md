@@ -1,9 +1,16 @@
-# React + Vite
+# Brushstrokes - Art & Craft Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Brushstrokes is an online platform dedicated to showcasing and selling a wide variety of art and craft items, with a focus on the "Painting and Drawing" category.
 
-Currently, two official plugins are available:
+## Live Site URL
+[Brushstrokes Live Site](https://brush-stokes.web.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-"# B9A10-client-side-muhammad-2002" 
+## Key Features
+- **Extensive Collection:** Explore a diverse collection of painting and drawing artworks, ranging from landscape paintings to portrait drawings.
+- **User-Friendly Navigation:** Navigate seamlessly through the website with our intuitive navbar, offering options like Home, All Art & Craft Items, Add Craft Item, My Art&Craft List, and more.
+- **Customization Options:** Personalize your browsing experience with our dark/light theme toggle feature.
+- **Convenient Submission Process:** Easily add your own art and craft items to our platform using our user-friendly submission form.
+- **Comprehensive Item Details:** Dive deeper into the details of each art and craft item with our comprehensive view details page.
+
+## Contributing
+Contributions are welcome! If you have any suggestions, feature requests, or bug reports, please open an issue on GitHub.
