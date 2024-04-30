@@ -12,7 +12,7 @@ const ArtCatagories = () => {
     <div className="mb-10">
       <div className="space-y-7 flex flex-col justify-center items-center">
         <h1 className="text-center text-3xl mt-8 border-b-2 border-[#0DBC95] font-bold tracking-tight text-[#0DBC95]">
-          Art Catagories
+          Art Sub Catagories
         </h1>
         <p className="w-[95%] md:w-[75%] mx-auto rale-way text-center ">
           Art categories encompass a vast spectrum, ranging from traditional

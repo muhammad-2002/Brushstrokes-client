@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/Provider";
@@ -35,6 +36,9 @@ const ArtCraftDetails = () => {
   }
   return (
     <div className="mt-10 w-[90%] mx-auto">
+      <Helmet>
+        <title>Brush Stroke -Details</title>
+      </Helmet>
       <div>
         <section className="dark:bg-gray-100 dark:text-gray-800">
           <div className="flex flex-col items-center justify-center">

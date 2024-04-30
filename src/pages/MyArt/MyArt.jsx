@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Provider/Provider";
 import MyCraftCard from "./../../components/MyCraftCard/MyCraftCard";
 
@@ -31,6 +32,9 @@ const MyArt = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Brush Stroke -MyArt</title>
+      </Helmet>
       <div className="flex justify-center items-center mt-9">
         <select
           onChange={handleChange}

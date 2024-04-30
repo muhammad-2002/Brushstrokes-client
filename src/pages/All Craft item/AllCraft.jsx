@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const AllArtCraftItems = () => {
@@ -21,8 +22,11 @@ const AllArtCraftItems = () => {
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 py-8">
+      <Helmet>
+        <title>Brush strokes-all_art</title>
+      </Helmet>
       <h1 className="text-3xl text-center font-bold mb-6 text-[#0DBC95]">
-        All Art & Craft Items
+        All Art Items
       </h1>
       {loading ? (
         <div className="flex items-center justify-center h-[500px] space-x-2">

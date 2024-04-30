@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../Provider/Provider";
@@ -34,6 +35,9 @@ const Details_Carft_item = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-[500px] space-x-2">
+        <Helmet>
+          <title>Brush Stroke -Details</title>
+        </Helmet>
         <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
         <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>
         <div className="w-4 h-4 rounded-full animate-pulse dark:bg-[#0DBC95]"></div>

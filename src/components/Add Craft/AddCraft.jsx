@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useContext } from "react";
+import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -57,6 +58,9 @@ const AddCraft = () => {
 
   return (
     <div className="md:w-[90%] w-[95%] mx-auto ">
+      <Helmet>
+        <title>Brush Stroke -AddArt</title>
+      </Helmet>
       <div>
         <Link to="/">
           <p className="inline-flex justify-center items-center gap-2 heading-color font-bold text-md pt-6 text-[#0DBC95] ">
